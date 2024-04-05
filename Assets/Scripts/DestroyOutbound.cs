@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class DestroyOutbound : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class DestroyOutbound : MonoBehaviour
             Debug.Log(pHealth.hPoint);
             Destroy(gameObject);
             if (pHealth.hPoint <= 0){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 Debug.Log("Game Over!");
             }
         }
